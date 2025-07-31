@@ -1,0 +1,120 @@
+@font-face {
+  font-family: CH-Book;
+  src: url(./InstrumentSans-VariableFont.ttf);
+}
+
+html {
+  background-color: #0164ab;
+}
+
+body {
+  max-width: 55rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 20px;
+  font-family: CH-Book;
+}
+
+header {
+  background-color: #0164ab;
+  color: #fff;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+table {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+td {
+  text-align: right;
+}
+
+td + td {
+  text-align: center;
+  padding: 0 0.25rem;
+}
+
+hr {
+  border: #fff 1px solid;
+}
+
+td > a:link {
+  color: #fff;
+}
+
+td > a:visited {
+  color: #fff;
+}
+
+a:active {
+  color: blue;
+}
+
+p > a {
+  color: blue;
+}
+
+a:visited {
+  color: blue;
+}
+
+article {
+  background-color: #fff;
+  text-align: center;
+  padding-bottom: 0.01rem;
+}
+
+h2 {
+  margin-bottom: 0;
+  padding-top: 1rem;
+  padding-bottom: 0;
+}
+
+p {
+  text-align: justify;
+  text-align-last: center;
+}
+
+ul,
+ol {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+ol {
+  padding-bottom: 1rem;
+}
+
+li {
+  text-align: left;
+}
+
+.item {
+  margin-top: 0.5rem;
+  padding: 0 1rem 1rem 1rem;
+}
+
+code {
+  text-align: left;
+  background-color: lightgray;
+}
+
+.figureImg {
+  border: 5px solid black;
+}
+
+.end {
+  margin-bottom: 1rem;
+}
+
+footer {
+  margin: 1.5rem 0 0 0;
+  text-align: center;
+}
+
+.logo {
+  width: 50%;
+  height: 50%;
+}

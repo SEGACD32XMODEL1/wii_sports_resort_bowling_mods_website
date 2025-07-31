@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resort Bowl Mods</title>
+    <link rel="stylesheet" href="../../index/style/style.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Wii Sports Resort Bowling Mods</h1>
+        <table>
+            <tr>
+                <td>
+                    <span>Main Site:</span>
+                </td>
+                <td>
+                    <a href="../../index.html">Home</span>
+                </td>
+                <td>
+                    <span>|</span>
+                </td>
+                <td>
+                    <a href="../../downloads/index.html">Downloads</a>
+                </td>
+                <td>
+                    <span>|</span>
+                </td>
+                <td>
+                    <a href="../../about/index.html">About</a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="100%">
+                    <hr>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Tools:</span>
+                </td>
+                <td>
+                    <a href="../../tools/brawlcrate/index.html">BrawlCrate</a>
+                </td>
+                <td>
+                    <span>|</span>
+                </td>
+                <td>
+                    <a href="../../tools/riivolution/index.html">Riivolution</a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="100%">
+                    <hr>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Mods:</span>
+                </td>
+                <td>
+
+                    <span style="font-weight: bold">Music</span>
+                </td>
+                <td>
+                    <span>|</span>
+                </td>
+                <td>
+                    <a href="../textures/index.html">Textures</a>
+                </td>
+
+                </td>
+            </tr>
+        </table>
+    </header>
+    <section class="main">
+        <article>
+            <h2>Music</h2>
+            <ol>
+                <li><a href="#Basic">Basic</a></li>
+                <li><a href="#Advanced">Advanced</a></li>
+                <li><a href="#Extra">Extra</a></li>
+            </ol>
+        </article>
+        <article>
+            <h2>Required Info</h2>
+            <h3>Audio File</h3>
+            <p class="item">
+                Your audio file must be in the <code>.wav</code> format. If you come across a <code>.brstm</code> file,
+                then you will have to check if it has the looping attribute set. You can do so by loading the file in
+                BrawlCrate.
+            </p>
+            <h3>Other Software</h3>
+            <p class="item">
+                <i>Audacity</i> will be featured, but is not required.
+            </p>
+            <h3>In-Game <code>.brstm</code> files</h3>
+            <p class="end">
+                In order:
+            <ol>
+                <li>10 Pin: <code>Bow_ingame_Amb.ry.32.brstm</code></li>
+                <li>100 Pin: <code>Bow_ingame_100_Amb.ry.32.brstm</code></li>
+                <li>Spin Control: <code>Bow_ingame_tech_Amb.ry.32.brstm</code></li>
+            </ol>
+            Notice the difference in each file name: <code>_100</code> for 100 pin,
+            and <code>_tech</code> for Spin
+            Control.
+            </p>
+        </article>
+    </section>
+    <section class="basic" id="Basic">
+        <article>
+            <h2>Basic</h2>
+            <h3>Basic 1: Simple Drag and Drop</h3>
+            <p class="item">
+                This is the simplest way to add music. It involves already having a <code>.brstm</code> file. <a
+                    href="https://smashcustommusic.net/">https://smashcustommusic.net/</a> is one such site to find
+                <code>.brstm</code> files. It is important that the file has looping enabled, or it will end with
+                silence.
+            </p>
+            <h4>Step 1</h4>
+            <p class="item">
+                Place the <code>.brstm</code> file in the folder that is specified in the Riivolution <code>.xml</code>
+                file. Make note of the path location of the <code>.brstm</code> file.
+            </p>
+            <h4>Step 2</h4>
+            <p class="item">
+                This is the important part. The Riivolution <code>.xml</code> file. There are three bowling modes, so
+                there are three tracks to replace. There are three options:
+            <ol>
+                <li>All the same track</li>
+                <li>All different tracks</li>
+                <li>Mix and match</li>
+            </ol>
+            </p>
+            <p class="item">
+                It all depends on how the <code>xml</code> structured. The only error one may make, is of reference to
+                two or more replacement <code>.brstm</code> files for the same track.
+
+                <br><br>Here is the first part for the selection screen:<br>
+
+                <code style="white-space: pre-line">
+                &lt;option name=&quot;Music?&quot;&gt;
+                
+                &lt;choice name=&quot;MySong&quot;&gt;
+                
+                &lt;patch id=&quot;toggle&quot; /&gt;
+                
+                &lt;/choice&gt;
+
+                &lt;/option&gt;
+                </code>
+
+                <br><br>Here is the second part to apply the changes:<br>
+
+                <code style="white-space: pre-line">
+            &lt;patch id=&quot;toggle&quot;&gt;
+
+            &lt;file disc=&quot;/Sound/Static/stream/Bow_ingame_Amb.ry.32.brstm&quot;
+            external=&quot;/MyFolder/MySong.brstm&quot; offset=&quot;&quot; size=&quot;0x3938700&quot; /&gt;
+
+            &lt;file disc=&quot;/Sound/Static/stream/Bow_ingame_100_Amb.ry.32.brstm&quot;
+            external=&quot;/MyFolder/MySong.brstm&quot; offset=&quot;&quot; size=&quot;0x3938700&quot; /&gt;
+
+            &lt;file disc=&quot;/Sound/Static/stream/Bow_ingame_tech_Amb.ry.32.brstm&quot;
+            external=&quot;/MyFolder/MySong.brstm&quot; offset=&quot;&quot; size=&quot;0x3938700&quot;/&gt;
+
+            &lt;/patch&gt;
+            </code>
+
+                <br>
+                or
+                <br>
+
+                <code style="white-space: pre-line">
+                &lt;option name=&quot;10 Pin&quot;&gt;
+                
+                &lt;choice name=&quot;MySong1&quot;&gt;
+                
+                &lt;patch id=&quot;10pin&quot; /&gt;
+                
+                &lt;/choice&gt;
+
+                &lt;/option&gt;
+
+                &lt;option name=&quot;100 Pin&quot;&gt;
+                
+                &lt;choice name=&quot;MySong2&quot;&gt;
+                
+                &lt;patch id=&quot;100pin&quot; /&gt;
+                
+                &lt;/choice&gt;
+
+                &lt;/option&gt;
+
+                &lt;option name=&quot;Spin Control&quot;&gt;
+                
+                &lt;choice name=&quot;MySong3&quot;&gt;
+                
+                &lt;patch id=&quot;spincontrol&quot; /&gt;
+                
+                &lt;/choice&gt;
+
+                &lt;/option&gt;
+                </code>
+
+                <br>
+                and
+                <br>
+
+                <code style="white-space: pre-line">
+            &lt;patch id=&quot;10pin&quot;&gt;
+
+            &lt;file disc=&quot;/Sound/Static/stream/Bow_ingame_Amb.ry.32.brstm&quot;
+            external=&quot;/MyFolder/MySong.brstm&quot; offset=&quot;&quot; size=&quot;0x3938700&quot; /&gt;
+
+            &lt;/patch&gt;
+
+            &lt;patch id=&quot;100pin&quot;&gt;
+
+            &lt;file disc=&quot;/Sound/Static/stream/Bow_ingame_100_Amb.ry.32.brstm&quot;
+            external=&quot;/MyFolder/MySong.brstm&quot; offset=&quot;&quot; size=&quot;0x3938700&quot; /&gt;
+
+            &lt;/patch&gt;
+
+            &lt;patch id=&quot;spincontrol&quot;&gt;
+
+            &lt;file disc=&quot;/Sound/Static/stream/Bow_ingame_tech_Amb.ry.32.brstm&quot;
+            external=&quot;/MyFolder/MySong.brstm&quot; offset=&quot;&quot; size=&quot;0x3938700&quot;/&gt;
+
+            &lt;/patch&gt;
+            </code>
+            </p>
+
+            <p class="item">
+                The patch id has to match both times, it the option/choice and patch tags. Make sure the external value
+                matches the path noted from before. The first set shows all three tracks replaced under one option for
+                simplicity. The second set shows individually set tracks for the most customizability. The last and most
+                important piece: <code>size="0x3938700"</code>. It allows the file 60mb (60 million bytes in
+                hexadecimal) of memory space in ram. This allows most songs to not cut off.
+            </p>
+
+            <h3>Basic 2: <code>.wav</code> conversion</h3>
+            <p class="item">
+                This will go over the simple process of a basic custom <code>.brstm</code> file.
+            </p>
+
+            <h4>Step 1</h4>
+
+            <figure>
+                <img class="figureImg" src="./img/brawlcrate_brstm_create.png" alt="brawlcrate .brstm button"
+                    title="Firgure 1" />
+                <figcaption>Figure 1</figcaption>
+            </figure>
+
+            <p class="item">
+                Have your <code>.wav</code> file ready. Refer to <b>Figure 1</b>. Open BrawlCrate. Select the "File"
+                tab, hover over the "New" submenu, and select "BRSTM Audio Stream". Locate your <code>.wav</code> file
+                in the popup file selection window.
+            </p>
+
+            <figure>
+                <img class="figureImg" src="./img/brawlcrate_brstm_settings.png"
+                    alt="brawlcrate .brstm creation settings" title="Firgure 2" />
+                <figcaption>Figure 2</figcaption>
+            </figure>
+
+            <p class="item">
+                Refer to <b>Figure 2</b>. Make sure that the "Loop" checkbox is ticked. For a <code>.brstm</code> file,
+                the "Frequency" has to be <code>32000 Hz</code>. If this is a different number, we will be using
+                Audacity to fix it. "Samples" is the length of the <code>.brstm</code> file. If you want to trim the
+                file in half, you divide by two and input it into the "End:" box. "Start:" is the start of the loop. It
+                is easier to use Audacity to find a point with reference to "Samples". When done, click "Okay".
+            </p>
+
+            <figure>
+                <img class="figureImg" src="./img/brawlcrate_brstm_save.png" alt="brawlcrate save button"
+                    title="Firgure 3" />
+                <figcaption>Figure 3</figcaption>
+            </figure>
+
+            <p class="item">
+                Figure 3 just shows how to save. Select the "File" tab and click "Save".
+            </p>
+
+            <h4>Step 2</h4>
+
+            <p class="item">
+                Refer to <a href="#Basic"><b>Basic 1</b></a>. It explains how to insert the <code>.brstm</code> file.
+            </p>
+            <img src="http://textfiles.com/underconstruction/babajacliffs4200under_construction.gif" />
+        </article>
+    </section>
+
+    <footer>
+        <img class="logo" src="../../index/img/logo.png" alt="SEGACD32XMODEL1 Logo" />
+    </footer>
+</body>
+
+</html>
